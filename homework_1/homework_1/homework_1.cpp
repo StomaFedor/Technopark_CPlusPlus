@@ -30,9 +30,9 @@ int main(int argc, char* argv[])
     try
     {
         if (argc != 5)
-            throw new invalid_argument("Incorrect command line data");
+            throw invalid_argument("Incorrect command line data");
         if (to_string(atoi(argv[3])) != argv[3] || to_string(atoi(argv[4])) != argv[4])
-            throw new invalid_argument("Incorrectly entered years");
+            throw invalid_argument("Incorrectly entered years");
         int beginYear = atoi(argv[3]), endYear = atoi(argv[4]);
         SetConsoleCP(1251);
         SetConsoleOutputCP(1251);

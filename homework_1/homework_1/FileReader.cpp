@@ -16,7 +16,7 @@ vector<vector<string>> FileReader::ReadFile(string filename, int firstCol, int s
         }
     }
     else
-        throw new invalid_argument("The file path is specified incorrectly");
+        throw invalid_argument("The file path is specified incorrectly");
     in.close();
     return arrData;
 }
