@@ -401,3 +401,5 @@ bin/
 build/
 CMakeFiles/
 CMakeCache.txt
+homework_1/
+*.json

@@ -3,15 +3,15 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sstream>
 #include <vector>
 
-using namespace std;
 
 class FileReader
 {
 public:
-	vector<vector<string>> ReadFile(string filename, int firstCol, int secondCol);
+	std::vector<std::vector<std::string>> ReadFile(std::string filename, const std::vector<size_t>& columns);
 
 private:
-	vector<string> Split(string& str, char separator, int firstCol, int secondCol);
+	std::vector<std::string> Split(const std::string& str, char separator, const std::vector<size_t>& columns);
 };

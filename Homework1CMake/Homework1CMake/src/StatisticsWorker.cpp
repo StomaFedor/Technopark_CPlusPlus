@@ -1,19 +1,18 @@
 #include "StatisticsWorker.h"
 
-vector<string> StatisticsWorker::GetArtistListInCurrentYears(vector<vector<string>> artists, int typeId, int beginYear, int EndYear)
+std::vector<std::string> StatisticsWorker::GetArtistListInCurrentYears(std::vector<std::vector<std::string>> artists, std::string typeId, int beginYear, int endYear)
 {
-	vector<string> result;
-	for (int i = 0; i < artists.size(); ++i)
-		if (beginYear < stoi(artists[i][1]) && EndYear > stoi(artists[i][1]))
-			result.push_back(artists[i][0]);
+	std::vector<std::string> result;
+	for each (std::vector<std::string> artist in artists)
+		if (typeId == artist[ARTIST_TYPE] && beginYear < std::stoi(artist[ARTIST_YEAR]) && endYear > std::stoi(artist[ARTIST_YEAR]))
+			result.push_back(artist[ARTIST_NAME]);
 	return result;
 }
 
-int StatisticsWorker::GetArtistTypeId(vector<vector<string>> types, string artistType)
+std::string StatisticsWorker::GetArtistTypeId(const std::vector<std::vector<std::string>>& types, const std::string& artistType)
 {
 	int i = 0;
-	for (i = 0; i < types.size(); ++i)
-		if (types[i][1] == artistType)
-			break;
-	return stoi(types[i][0]);
+	for each (std::vector<std::string> type in types)
+		if (type[TYPE_NAME] == artistType)
+			return type[TYPE_ID];
 }

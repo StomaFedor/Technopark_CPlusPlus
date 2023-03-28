@@ -3,11 +3,16 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
+const size_t TYPE_NAME = 1;
+const size_t TYPE_ID = 0;
+const size_t ARTIST_NAME = 0;
+const size_t ARTIST_YEAR = 1;
+const size_t ARTIST_TYPE = 2;
+
 class StatisticsWorker
 {
 public:
-	vector<string> GetArtistListInCurrentYears(vector<vector<string>> artists, int typeId, int beginYear, int EndYear);
+	std::vector<std::string> GetArtistListInCurrentYears(std::vector<std::vector<std::string>> artists, std::string typeId, int beginYear, int endYear);
 
-	int GetArtistTypeId(vector<vector<string>> types, string artistType);
+	std::string GetArtistTypeId(const std::vector<std::vector<std::string>>& types, const std::string& artistType);
 };
